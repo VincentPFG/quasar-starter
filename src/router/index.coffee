@@ -5,9 +5,10 @@ import routes from './routes'
 
 Vue.use VueRouter
 
-export default (store, ssrContext) ->
-	new VueRouter
+export default ->
+	new VueRouter {
 		scrollBehavior: -> x: 0, y: 0
 		routes
 		mode: process.env.VUE_ROUTER_MODE
 		base: process.env.VUE_ROUTER_BASE
+	}
