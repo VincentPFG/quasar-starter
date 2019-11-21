@@ -1,15 +1,18 @@
+import generated from 'vue-auto-routing'
+
 routes = [
     path: '/'
     component: -> import('layouts/MyLayout.vue')
     children: [
-        path: ''
-        component: -> import('pages/Index.vue')
+        ...generated
     ]
 ]
 
 if process.env.MODE isnt 'ssr'
     routes.push
-        path: '*'
-        component: -> import('pages/Error404.vue')
+        # path: '*'
+        # component: -> import('pages/Error404.vue')
+        path: '/error404'
+        alias: '*'
 
 export default routes

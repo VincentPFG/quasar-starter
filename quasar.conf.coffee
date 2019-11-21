@@ -1,3 +1,5 @@
+VueAutoRoutingPlugin = require('vue-auto-routing/lib/webpack-plugin')
+
 module.exports = (ctx) ->
 	boot: [ 'axios' ]
 	css: [ 'app.sass' ]
@@ -15,6 +17,9 @@ module.exports = (ctx) ->
 		scopeHoisting: true
 		extendWebpack: (cfg) ->
 			cfg.resolve.extensions.unshift '.coffee'
+			cfg.plugins.push new VueAutoRoutingPlugin
+				pages: 'src/pages/'
+				importPrefix: 'pages/'
 		chainWebpack: (chain) ->
 			chain.module.rule 'pug'
 				.test /\.pug$/
