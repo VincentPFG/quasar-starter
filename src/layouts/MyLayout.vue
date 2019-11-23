@@ -5,7 +5,7 @@ q-layout(view='lHh Lpr lFf')
 			q-btn(flat dense round @click='leftDrawerOpen = !leftDrawerOpen' icon='menu' aria-label='Menu')
 			q-toolbar-title Quasar App
 			div Quasar v{{ $q.version }}
-	q-drawer(v-model='leftDrawerOpen' show-if-above bordered content-class='bg-grey-2')
+	q-drawer(v-model='leftDrawerOpen' show-if-above bordered DARKcontent-class='bg-grey-2')
 		q-list
 			q-item-label(header) Essential Links
 			q-item(clickable tag='a' target='_blank' href='https://quasar.dev')
@@ -54,4 +54,7 @@ export default
 	
 	data: ->
 		leftDrawerOpen: false
+
+	created: ->
+		@$q.dark.set on
 </script>
