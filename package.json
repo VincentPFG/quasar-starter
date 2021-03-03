@@ -15,7 +15,7 @@
     "axios": "^0.18.1",
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.4.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "quasar": "^1.0.0",
     "vue-auto-routing": "^0.4.0"
